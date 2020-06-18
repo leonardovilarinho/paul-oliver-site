@@ -46,8 +46,9 @@ a, * {
   display: flex;
   width: 100%;
   position: relative;
-  background: #23211e;
-  height: 80vh;
+  background-image: url('./assets/banner2.jpeg');
+  background-size: 100%;
+  height: 100vh;
 }
 
 .po-primary {
@@ -56,27 +57,13 @@ a, * {
 
 .po-header .po-header__background {
   position: absolute;
-  height: 80vh;
-  padding: 0px;
-  bottom: 0;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  width: 100%;
+  padding: 0pxa;
+  top: -140px;
   filter: gray;
-  z-index: 2;
+  z-index: 1;
 }
 
-.po-header .po-header__overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background: #000;
-  left: 0;
-  bottom: 0;
-  transform: rotate(-180deg);
-  opacity: 0.1;
-  padding: 0px;
-  margin: 0px;
-}
 
 .po-header .po-header__content {
   width: 100%;
@@ -87,7 +74,13 @@ a, * {
   z-index: 3;
 }
 
-.po-header .po-header__content img {
+.po-header .po-header__content figure {
+  width: 250px;
+  padding: 10px;
+  background: #000;
+}
+
+.po-header .po-header__content figure img {
   width: 250px;
 }
 
@@ -102,7 +95,7 @@ a, * {
 }
 
 .po-header .po-header__menu li {
-  padding: 10px 5px 5px;
+  padding: 0px 5px 5px;
   margin: 0px 10px;
   font-weight: 200;
   font-size: 20px;
@@ -110,11 +103,24 @@ a, * {
   text-transform: uppercase;
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease-in;
+  height: 40px;
+  line-height: 45px;
+  background: #000;
 }
 
-.po-header .po-header__menu li:hover, .po-header .po-header__menu li a:hover:after {
-  content: '';
-  border-bottom: 1px solid #fff;
+.po-header .po-header__menu li:hover {
+  background: #ffff;
+  color: #000;
+  transition: all 0.2s ease-in;
+}
+
+.po-header .po-header__menu li a {
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.po-header .po-header__menu li:hover a {
+  color: #000;
   transition: all 0.2s ease-in;
 }
 
@@ -154,6 +160,7 @@ a, * {
   width: 70%;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 
@@ -181,10 +188,11 @@ h2 {
 .po-grid .po-card {
   width: calc(25% - 10px);
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 6px;
   background: #000;
   display: flex;
   flex-flow: column;
+  z-index: 10;
 }
 
 .po-grid__3 .po-card {
@@ -199,7 +207,7 @@ h2 {
 
 .po-grid .po-card iframe {
   margin: 5px;
-  border-radius: 20px;
+  border-radius: 6px;
   width: calc(100% - 10px);
   height: 250px;
 }
@@ -227,24 +235,55 @@ h2 {
 }
 
 .po-grid .po-card .po-card__content button {
-  border: 2px #fafafa solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px #4caf50 solid;
+  color:#4caf50;
   background: transparent;
-  padding: 10px 30px;
+  padding: 5px 10px;
   margin: 30px 15px 10px;
-  align-self: flex-end;
-  border-radius: 20px;
+  align-self: center;
+  width: 80%;
+  border-radius: 6px;
+  transition: all 0.3s ease-in;
+}
+
+.po-grid .po-card .po-card__content button:hover {
+  color:#fafafa;
+  background: #4caf50;
+  transition: all 0.3s ease-in;
+}
+
+.po-grid .po-card .po-card__content button img {
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+  padding-right: 10px;
+}
+
+
+.po-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  left: 0;
+  bottom: 0;
+  transform: rotate(-180deg);
+  opacity: 0.1;
+  padding: 0px;
+  margin: 0px;
 }
 
 
 @media screen and (max-width:1024px) {
   .po-header {
     overflow: hidden;
-  }
-  .po-header .po-header__background {
-    left: -220px;
+    background-size: auto 100%;
   }
 
-  .po-header .po-header__content img {
+  .po-header .po-header__content figure {
     margin-top: 250px;
   }
 
@@ -254,6 +293,7 @@ h2 {
 
   .po-header .po-header__menu li {
     text-align: center;
+    margin: 2px 0px;
   }
 
   .po-container {
@@ -263,16 +303,25 @@ h2 {
 
   .po-grid {
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    max-width: 100vw;
   }
 
   .po-grid .po-card {
-    width: calc(100% - 10px);
-    margin: 5px;
-    border-radius: 20px;
+    width: 65vw;
+    min-width: 65vw;
+    margin: 0px 5px 10px;
     background: #000;
     display: flex;
     flex-flow: column;
   }
+
+  .po-grid .po-card:first-child {
+    margin-left: 10px;
+  }
   
+  .po-grid .po-card:last-child {
+    margin-right: 10px;
+  }
 }
