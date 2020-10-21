@@ -267,6 +267,7 @@ h2 {
 } 
 .po-grid .po-card .po-card__content a.prime:hover {
   background: #0ca3d7;
+  color:#fafafa;
 }
 
 .po-grid .po-card .po-card__content a.deezer {
@@ -275,6 +276,7 @@ h2 {
 } 
 .po-grid .po-card .po-card__content a.deezer:hover {
   background: #b32d13;
+  color:#fafafa;
 }
 
 
