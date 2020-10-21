@@ -234,7 +234,7 @@ h2 {
   margin: 0px;
 }
 
-.po-grid .po-card .po-card__content button {
+.po-grid .po-card .po-card__content a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,13 +249,13 @@ h2 {
   transition: all 0.3s ease-in;
 }
 
-.po-grid .po-card .po-card__content button:hover {
+.po-grid .po-card .po-card__content a:hover {
   color:#fafafa;
   background: #4caf50;
   transition: all 0.3s ease-in;
 }
 
-.po-grid .po-card .po-card__content button img {
+.po-grid .po-card .po-card__content a img {
   width: 30px;
   height: 30px;
   margin: 0px;
