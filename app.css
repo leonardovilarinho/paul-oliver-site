@@ -261,6 +261,22 @@ h2 {
   margin: 0px;
   padding-right: 10px;
 }
+.po-grid .po-card .po-card__content a.prime {
+  border: 2px #0ca3d7 solid;
+  color:#0ca3d7;
+} 
+.po-grid .po-card .po-card__content a.prime:hover {
+  background: #0ca3d7;
+}
+
+.po-grid .po-card .po-card__content a.deezer {
+  border: 2px #b32d13 solid;
+  color:#b32d13;
+} 
+.po-grid .po-card .po-card__content a.deezer:hover {
+  background: #b32d13;
+}
+
 
 
 .po-overlay {
